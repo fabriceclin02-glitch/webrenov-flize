@@ -8,7 +8,7 @@
   var ST = { v: 0, p: FP.hash(E.nom) % 3, slogan: '', tel: E.tel || '', nom: E.nom, cs: 'a' };
   function pal() { return S.p[ST.p]; }
   function rgba(h, a) { return 'rgba(' + FP.rgb(h).join(',') + ',' + a + ')'; }
-  function ph(n) { return E.pre + 'stock/' + E.k + '-' + n + '.jpg'; }
+  function ph(n) { return (E.ciel && (E.k === 'mairie' || E.k === 'asso')) ? E.pre + E.slug + '/large.jpg' : E.pre + 'stock/' + E.k + '-' + n + '.jpg'; }
   function ciel() { return E.ciel ? E.pre + E.slug + '/ciel.jpg' : ph(1); }
   function large() { return E.ciel ? E.pre + E.slug + '/large.jpg' : ph(2); }
   function slogan() { return ST.slogan || S.h; }
